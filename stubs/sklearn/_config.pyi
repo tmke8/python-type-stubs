@@ -1,4 +1,5 @@
 from collections.abc import Iterator
+from contextlib import contextmanager
 from typing import Literal
 
 from ._typing import Int
@@ -19,6 +20,7 @@ def set_config(
     enable_metadata_routing: None | bool = None,
     skip_parameter_validation: None | bool = None,
 ) -> None: ...
+@contextmanager
 def config_context(
     *,
     assume_finite: None | bool = None,
