@@ -18,7 +18,19 @@ class LinearSVC(LinearClassifierMixin, SparseCoefMixin, BaseEstimator):
     intercept_: ndarray = ...
     coef_: ndarray = ...
 
-    _parameter_constraints: ClassVar[dict] = ...
+    _parameter_constraints: ClassVar[dict]
+    penalty: Literal["l1", "l2"]
+    loss: Literal["squared_hinge", "hinge"]
+    dual: bool
+    tol: Float
+    C: Float
+    multi_class: Literal["ovr", "crammer_singer"]
+    fit_intercept: bool
+    intercept_scaling: Float
+    class_weight: None | Mapping | str
+    verbose: Int
+    random_state: RandomState | None | Int
+    max_iter: Int
 
     def __init__(
         self,

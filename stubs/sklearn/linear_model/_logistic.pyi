@@ -28,6 +28,21 @@ class LogisticRegression(LinearClassifierMixin, SparseCoefMixin, BaseEstimator):
     classes_: ndarray = ...
 
     _parameter_constraints: ClassVar[dict] = ...
+    penalty: Literal["l1", "l2", "elasticnet"] | None
+    dual: bool
+    tol: Float
+    C: Float
+    fit_intercept: bool
+    intercept_scaling: Float
+    class_weight: None | Mapping | str
+    random_state: RandomState | None | Int
+    solver: Literal["lbfgs", "liblinear", "newton-cg", "newton-cholesky", "sag", "saga"]
+    max_iter: Int
+    multi_class: Literal["auto", "ovr", "multinomial"]
+    verbose: Int
+    warm_start: bool
+    n_jobs: None | Int
+    l1_ratio: None | Float
 
     def __init__(
         self,
